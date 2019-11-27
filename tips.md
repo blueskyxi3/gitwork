@@ -20,11 +20,15 @@ File-Preferences -> Color Theme
 ```
 your repositories -> select your project which you want to delete -> slide to setting Tab -> draw down to bottom->select Delete this repository
 ```
-## 2. markdown 基本語法 
+## 2. github上項目如何轉為公有
+```
+your repositories -> select your project which you want to delete -> slide to setting Tab -> draw down to bottom->select make public
+```
+## 3. markdown 基本語法 
 
      [參考簡書上的link](https://www.jianshu.com/p/191d1e21f7ed)
 
-## 3.Windows下使用notepad++对文本进行行列转换
+## 4.Windows下使用notepad++对文本进行行列转换
  ***
 * 行转列： 
     Ctrl + F  选择替换
