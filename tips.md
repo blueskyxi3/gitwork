@@ -41,4 +41,8 @@ your repositories -> select your project which you want to delete -> slide to se
    替换为：不填写或填写指定的内容
    查找模式：正则表达式
  ***
+ ## 5. 如何把本地Jar轉為maven依賴
+```
+mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-Java -Dversion=0.1 -Dpackaging=jar -Dfile=alipay-sdk-java0.1.jar
+```
 
