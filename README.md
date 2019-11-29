@@ -9,7 +9,7 @@ record some tips in work
 
 FinTech
 
-密等性
+幂等性
 
 https://www.cnblogs.com/756623607-zhang/p/7920628.html
 
