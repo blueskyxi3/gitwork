@@ -8,3 +8,9 @@ record some tips in work
 ## 人工智能
 
 FinTech
+
+密等性
+
+https://www.cnblogs.com/756623607-zhang/p/7920628.html
+
+
