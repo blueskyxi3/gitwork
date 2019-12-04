@@ -9,7 +9,7 @@ bitbucket vscode webstorm jdk eclipse idea notepad++ [Forticlient VPN](http://ww
 ```
 view -> show mini map
 ```
-## 2. 如果調整背景色
+## 2. 如何調整背景色
 ```
 File-Preferences -> Color Theme
 ```
@@ -44,5 +44,20 @@ your repositories -> select your project which you want to delete -> slide to se
  ## 5. 如何把本地Jar轉為maven依賴
 ```
 mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-Java -Dversion=0.1 -Dpackaging=jar -Dfile=alipay-sdk-java0.1.jar
+mvn install:install-file -DgroupId=org.activiti -DartifactId=activiti-enginecancel -Dversion=5.20.0 -Dpackaging=jar -Dfile=activiti-enginecancel-5.20.0.jar 
+mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.4.0 -Dpackaging=jar -Dfile=classes12.jar
+```
+
+## 6. Oracle如何調整背景色
+```
+Tools-Preferences -> Fonts->Editor 
+then select your favoriate color for background color
+```
+## 7. Notepad++ 如何對比文件
+```
+step 1. intall comparison plugin.
+   Plugins -> plugin admin   
+Step 2. file comparison
+   Plugins -> compare
 ```
 

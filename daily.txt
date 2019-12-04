@@ -1,5 +1,6 @@
 http://bugmenot.com/view/oracle.com
-bitbucket
+bitbucket  -- git  bsm/Abcd1234
+http://192.168.127.36:7990/projects/BSSID/repos/crm/browse?at=refs/heads/master
 http://192.168.127.36:7990/projects/BT/repos/documentation/browse/IDD%20daily%20integrity%20check.md
 http://eapproval.citictel.com:8080/eBRM/index.php?request=search_out  工單
 http://bosssupport.citictel.com/otrs/index.pl?Action=AgentTicketQueue
@@ -29,4 +30,23 @@ https://go.cqmmgo.com/forum-197-thread-171711528621220095-1-1.html
 
 
 https://community.jaspersoft.com/community-download
+
+
+http://192.168.127.58:8080/CITIC_BSS_CRM
+username:bss
+password:bss
+
+-------------------------------------------
+WiFi SSID:	InternetWIFI
+登陸賬戶:	vincentzou.wifi
+初始密碼:	8ik9ol0p;
+
+
+
+http://192.168.127.41:8080/CITIC_BSS_CRM_2/#/home    bss/bss
+    --CRM
+http://192.168.127.41:9999/com/   --workflow
+
+192.168.101.231 root/password
+192.168.100.177 root/bigdata999
 
