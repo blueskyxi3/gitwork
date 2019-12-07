@@ -16,3 +16,6 @@ https://www.cnblogs.com/756623607-zhang/p/7920628.html
 
 例子，有一个从账户中取钱的api
 
+
+WireMock
+
