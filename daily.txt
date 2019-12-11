@@ -1,3 +1,36 @@
+documentation
+http://bsm@192.168.127.36:7990/scm/bt/documentation.git
+$###,###.00
+$F{COST}.compareTo(new BigDecimal(10)) > 0 ? "#FF0000" :"#000000"
+
+
+http://192.168.101.221:8080/CITIC_BSS_CRM/#/home   -- CRM PROD
+http://192.168.101.227:8080/CITIC_BSS/#/billing/billing-status   -- Billing/Routing PROD
+CDR file 
+OA(主叫) --> DA(被叫) prefix  billCode 
+parse -> rating -> discount --> audit(minutes,number of call)   daily hourly
+myself account
+
+---------------------------------------------------------------------
+Vendor offer Emails parsing errors report (from 2019-12-02 23:00:26 to 2019-12-03 00:00:26):  -- Inteligence route system  
+會從mysql同步一個表到oracle，然后再對該表做檢查
+Please help to raise a PA to adjust below package(PK_CARR_OFFER_MAIL_ALERT   row number :310) .  
+User= irs    ServiceName = irsprd  HOST = 192.168.100.23   PORT = 1530
+Package = PK_CARR_OFFER_MAIL_ALERT
+---------------------------------------------------------------------
+
+jenkins how to deploy workflow
+
+http://192.168.101.231:8080/view/BSS%20IDD/job/bssidd-stg-crm-build/configure
+bsm/BSM2019
+fetch from */testing 
+then enter into 192.168.127.41 as account root 
+/usr/local/artifacts/   execute script: ./deploy.sh
+then start tomcat 
+/usr/local/tomcat/bin/startup.sh
+
+
+
 http://bugmenot.com/view/oracle.com
 bitbucket  -- git  bsm/Abcd1234
 http://192.168.127.36:7990/projects/BSSID/repos/crm/browse?at=refs/heads/master
@@ -6,6 +39,8 @@ http://eapproval.citictel.com:8080/eBRM/index.php?request=search_out  工單
 http://bosssupport.citictel.com/otrs/index.pl?Action=AgentTicketQueue
 http://192.168.100.16:8082/OpenKM/frontend/index.jsp
 
+
+BOSS IDD
 ssh 192.168.100.153   oper/oper1616
 database 192.168.100.23 1521 servicename:cdrprd
 %ORACLE_HOME%\network\admin\tnsnames.ora
@@ -42,11 +77,108 @@ WiFi SSID:	InternetWIFI
 初始密碼:	8ik9ol0p;
 
 
+=============================================================================
+1. 發郵件的原理(complete,cancel,reject)  
+2. 問下use case 的事情
 
+wf配置的是202.68.194.227
+app中配置的是192.168.101.224
+
+echo $CITIC_BSS_CONFIG
+cd /usr/data/AppFiles/mail.properties
+com工程的workflowengine.properties
+和APP工程的mail.properties
+/usr/local/tomcat/webapps2/com/WEB-INF/spring/workflowengine.properties
 http://192.168.127.41:8080/CITIC_BSS_CRM_2/#/home    bss/bss
     --CRM
 http://192.168.127.41:9999/com/   --workflow
 
+
 192.168.101.231 root/password
 192.168.100.177 root/bigdata999
+
+wingtse
+togikwok
+
+
+問題1 Request流程未歸檔
+
+參考數據如下：
+Request Type: 1 Create An offer
+select to_char(a.start_time_,'yyyy-mm-dd hh24:mi:ss'),
+a.* from act_hi_procinst a where proc_inst_id_ in ( 36009,35970);
+
+問題2 如何關聯兩筆流程單 --OK
+select * from cust_order where business_key = 'BSS-WF-Default-21138'; 
+
+
+select * from cust_request where business_key = 'BSS-WF-Request-RQ0279-1912';
+
+
+問題3 Ref_NO 的命名規則
+
+問題4 Order Type 是如何分類的
+
+
+問題5 創建Request單時，最好能給提示給出一個ref_no 方便后續查詢跟進。 
+
+問題6 Request流程中Request Type 11 - 17沒有配置條件，需加上。
+
+問題7 在Request Type 創建customer offer時，select Destinaction 里邊的Exist Rate的意義是什?。
+      如果我選擇China ，后續點confirm還是有提示不能繼續。
+
+問題8 Item1 除了request type節點需要做此處理，其它的審批節點也需要做相同的處理嗎？ -- confirm with adrain
+
+
+問題9 如果發送郵件創建request單，是否要回郵件。 refNO
+
+問題10 通過發郵件生成的request單，格式是怎麼樣的。
+
+問題11 relax rule 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -46,14 +46,18 @@ your repositories -> select your project which you want to delete -> slide to se
 mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-Java -Dversion=0.1 -Dpackaging=jar -Dfile=alipay-sdk-java0.1.jar
 mvn install:install-file -DgroupId=org.activiti -DartifactId=activiti-enginecancel -Dversion=5.20.0 -Dpackaging=jar -Dfile=activiti-enginecancel-5.20.0.jar 
 mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.4.0 -Dpackaging=jar -Dfile=classes12.jar
+mvn package -Dmaven.test.skip=true 
 ```
-
-## 6. Oracle如何調整背景色
+ ## 6.maven跳過測試環節
+```
+mvn package -Dmaven.test.skip=true 
+```
+## 7. Oracle如何調整背景色
 ```
 Tools-Preferences -> Fonts->Editor 
 then select your favoriate color for background color
 ```
-## 7. Notepad++ 如何對比文件
+## 8. Notepad++ 如何對比文件
 ```
 step 1. intall comparison plugin.
    Plugins -> plugin admin   
@@ -61,3 +65,43 @@ Step 2. file comparison
    Plugins -> compare
 ```
 
+## 9. Docker 相關
+```
+docker pull mysql:5.6
+#启动
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=Lzslov123! -d mysql
+docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+
+#进入容器
+docker exec -it mysql bash
+
+#登录mysql
+mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Lzslov123!';
+
+#添加远程登录用户
+CREATE USER 'liaozesong'@'%' IDENTIFIED WITH mysql_native_password BY 'Lzslov123!';
+GRANT ALL PRIVILEGES ON *.* TO 'liaozesong'@'%';
+```
+## 10. Spring boot 如何統一接收參數
+```
+ @GetMapping("/{reportName}")
+    public void getReportByParam(
+            @PathVariable("reportName") final String reportName,
+            @RequestParam(required = false) Map<String, Object> parameters,
+            HttpServletResponse response) throws SQLException, ClassNotFoundException, JRException, IOException {
+
+        parameters = parameters == null ? new HashMap<>() : parameters;
+        //获取文件流
+        ClassPathResource resource = new ClassPathResource("jaspers" + File.separator + reportName + ".jasper");
+        InputStream jasperStream = resource.getInputStream();
+
+        JasperReport jasperReport = (JasperReport) JRLoader.loadObject(jasperStream);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource.getConnection());
+        // JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, new JREmptyDataSource());
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "inline;");
+        final OutputStream outputStream = response.getOutputStream();
+        JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+    }
+```
