@@ -105,3 +105,13 @@ GRANT ALL PRIVILEGES ON *.* TO 'liaozesong'@'%';
         JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
     }
 ```
+## 11 net.sf.jasperreports.engine.util.JRFontNotFoundException: Font '宋体' is not available to the JVM. See the Javadoc for more details. 
+```
+1、把需要用到的字体（可以直接拷贝windows系统的C:\WINDOWS\Fonts 下的相关字体）拷贝当前项目的classpath下，一般为classes目录下 
+2、在classpath里添加 jasperreports.properties 属性文件 
+文件内容为： 
+net.sf.jasperreports.awt.ignore.missing.font=true 
+即可解决
+```
+
+
