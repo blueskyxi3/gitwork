@@ -19,3 +19,7 @@ https://www.cnblogs.com/756623607-zhang/p/7920628.html
 
 WireMock
 
+spring 多实例处理
+https://blog.csdn.net/m0_37890289/article/details/91600214
+https://www.cnblogs.com/boychen/p/10624935.html
+
