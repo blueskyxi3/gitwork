@@ -129,3 +129,22 @@ Unable to authenticate using any of the configured authentication methods.
 3. 以下3条命令：
 sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config;sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config;reboot
 
+## 14 nginx docker创建以及从容器里拷贝文件
+```
+docker run -d -p 8082:80 --name some-nginx -v ~/nginx/www:/usr/share/nginx/html -v ~/nginx/conf/conf.d:/etc/nginx/conf.d -v ~/nginx/logs:/var/log/nginx nginx
+docker cp 6dd4380ba708:/etc/nginx/nginx.conf ~/nginx/conf
+https://www.runoob.com/docker/docker-install-nginx.html
+/root/nginx/conf/conf.d 直接配置这个目录里边的xml文件即可
+     location ^~/api {
+        proxy_pass http://10.19.18.146:8888/api;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+```
+
+## 15 git创建分支
+```
+git checkout -b dev 12345(如果没有版本，则已当前分支最新的版本号)
+git push origin dev
+```
