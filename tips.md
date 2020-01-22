@@ -114,7 +114,18 @@ net.sf.jasperreports.awt.ignore.missing.font=true 
 即可解决
 ```
 
-## nvm每次启动终端都要设置nvm use
+## 12 nvm每次启动终端都要设置nvm use
 ```
 nvm alias default stable
 ```
+走了很多坑，总是提示：
+
+## 13 google cloud ssh login
+The client has disconnected from the server.Reason:
+Unable to authenticate using any of the configured authentication methods. 
+总算找到了方法：
+1. 切换root用户： sudo -i 
+2. 设置root密码：passwd root
+3. 以下3条命令：
+sed -i 's/PermitRootLogin no/PermitRootLogin yes/g' /etc/ssh/sshd_config;sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config;reboot
+
