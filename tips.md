@@ -114,4 +114,7 @@ net.sf.jasperreports.awt.ignore.missing.font=true 
 即可解决
 ```
 
-
+## nvm每次启动终端都要设置nvm use
+```
+nvm alias default stable
+```
