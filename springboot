@@ -1,0 +1,2 @@
+1.获取配置文件的方法 @ConfigurationProperties(Prefix = "person") 可与@Validated组合使用，在字段上加@Email等较验规则
+  @Value
