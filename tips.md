@@ -29,7 +29,7 @@ your repositories -> select your project which you want to delete -> slide to se
      [參考簡書上的link](https://www.jianshu.com/p/191d1e21f7ed)
 
 ## 4.Windows下使用notepad++对文本进行行列转换
- ***
+***
 * 行转列： 
     Ctrl + F  选择替换
     查找目标：填写指定的内容
@@ -40,7 +40,7 @@ your repositories -> select your project which you want to delete -> slide to se
    查找目标：\r\n
    替换为：不填写或填写指定的内容
    查找模式：正则表达式
- ***
+***
  ## 5. 如何把本地Jar轉為maven依賴
 ```
 mvn install:install-file -DgroupId=com.alipay -DartifactId=sdk-Java -Dversion=0.1 -Dpackaging=jar -Dfile=alipay-sdk-java0.1.jar
@@ -144,7 +144,13 @@ https://www.runoob.com/docker/docker-install-nginx.html
 ```
 
 ## 15 git创建分支
+
 ```
 git checkout -b dev 12345(如果没有版本，则已当前分支最新的版本号)
 git push origin dev
 ```
+
+## 16.LDAP
+
+https://spring.io/guides/gs/authenticating-ldap/
+
